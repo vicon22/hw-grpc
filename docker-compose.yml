@@ -8,6 +8,9 @@ services:
     image: client-service:latest
     ports:
       - "3000:3000" # Внешний порт клиента
+    environment:
+      - USER_SERVICE_URL=http://user:8090
+      - EXPENSE_SERVICE_URL=http://expense:8085
     depends_on:
       - expense
       - user

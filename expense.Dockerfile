@@ -2,8 +2,8 @@ FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-COPY target/user-service-jar-with-dependencies.jar /app/user-service.jar
+COPY target/expense-service-jar-with-dependencies.jar /app/expense-service.jar
 
 EXPOSE 8085
 
-CMD ["java", "-jar", "/app/user-service.jar"]
+CMD ["java", "-jar", "/app/expense-service.jar"]
