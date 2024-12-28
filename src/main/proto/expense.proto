@@ -1,0 +1,34 @@
+syntax = "proto3";
+package expense;
+
+service ExpenseService {
+    rpc AddExpense(AddExpenseRequest) returns (ExpenseResponse);
+    rpc GetExpenses(GetExpensesRequest) returns (ExpensesListResponse);
+}
+
+message AddExpenseRequest {
+    int32 user_id = 1;
+    string category = 2;
+    float amount = 3;
+    string date = 4;
+}
+
+message ExpenseResponse {
+    int32 expense_id = 1;
+    string status = 2;
+}
+
+message GetExpensesRequest {
+    string user_id = 1;
+}
+
+message ExpensesListResponse {
+    repeated Expense expenses = 1;
+}
+
+message Expense {
+    string expense_id = 1;
+    string category = 2;
+    float amount = 3;
+    string date = 4;
+}
