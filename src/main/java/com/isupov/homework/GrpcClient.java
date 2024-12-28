@@ -9,7 +9,18 @@ import user.User;
 import user.UserServiceGrpc;
 
 public class GrpcClient {
-    public static void main(String[] args) {
+
+    private static final String USER_HOST = "user";
+//    private static final String USER_HOST = "localhost";
+    private static final int USER_PORT = 8090;
+    private static final String EXPENSE_HOST = "expense";
+//    private static final String EXPENSE_HOST = "localhost";
+    private static final int EXPENSE_PORT = 8085;
+    public static void main(String[] args) throws InterruptedException {
+
+        System.out.println("Client Started");
+
+        try {
 
         System.out.println("Регистрация пользователя");
         registerUser();
@@ -19,10 +30,15 @@ public class GrpcClient {
         addExpense();
         System.out.println("Получение трат пользователя");
         getExpense();
+    } catch (Exception e) {
+        System.out.println(e);
+    }
+
+        Thread.sleep(20000 * 1000);
     }
 
     private static void addExpense() {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8085)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(EXPENSE_HOST, EXPENSE_PORT)
                 .usePlaintext()
                 .build();
 
@@ -39,7 +55,7 @@ public class GrpcClient {
     }
 
     private static void getExpense() {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8085)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(EXPENSE_HOST, EXPENSE_PORT)
                 .usePlaintext()
                 .build();
 
@@ -55,7 +71,7 @@ public class GrpcClient {
     }
 
     private static void registerUser() {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8090)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(USER_HOST, USER_PORT)
                 .usePlaintext()
                 .build();
 
@@ -72,7 +88,7 @@ public class GrpcClient {
     }
 
     private static void getUser() {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 8090)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(USER_HOST, USER_PORT)
                 .usePlaintext()
                 .build();
 
