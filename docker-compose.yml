@@ -1,19 +1,30 @@
 version: '3.8'
 
 services:
+  py:
+    build:
+      context: .
+      dockerfile: py.Dockerfile
+    image: py-service:latest
+    depends_on:
+      - expense
+      - user
+    networks:
+      - app-network
+
   client:
     build:
       context: .
       dockerfile: client.Dockerfile
     image: client-service:latest
-    ports:
-      - "3000:3000" # Внешний порт клиента
     environment:
       - USER_SERVICE_URL=http://user:8090
       - EXPENSE_SERVICE_URL=http://expense:8085
     depends_on:
       - expense
       - user
+    networks:
+      - app-network
 
   expense:
     build:
@@ -22,6 +33,8 @@ services:
     image: expense-service:latest
     ports:
       - "8085:8085"
+    networks:
+      - app-network
 
   user:
     build:
@@ -30,3 +43,12 @@ services:
     image: user-service:latest
     ports:
       - "8090:8090"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.1.0/24
