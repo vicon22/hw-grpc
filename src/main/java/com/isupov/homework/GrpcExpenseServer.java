@@ -8,7 +8,7 @@ import io.grpc.ServerBuilder;
 
 import java.io.IOException;
 
-public class GrpcServer {
+public class GrpcExpenseServer {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Expense Server Started");

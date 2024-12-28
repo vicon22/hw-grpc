@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  client:
+    build:
+      context: .
+      dockerfile: client.Dockerfile
+    image: client-service:latest
+    ports:
+      - "3000:3000" # Внешний порт клиента
+    depends_on:
+      - expense
+      - user
+
+  expense:
+    build:
+      context: .
+      dockerfile: expense.Dockerfile
+    image: expense-service:latest
+    ports:
+      - "8085:8085"
+
+  user:
+    build:
+      context: .
+      dockerfile: user.Dockerfile
+    image: user-service:latest
+    ports:
+      - "8090:8090"

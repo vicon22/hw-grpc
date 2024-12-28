@@ -11,14 +11,14 @@ import user.UserServiceGrpc;
 public class GrpcClient {
     public static void main(String[] args) {
 
-        System.out.println("Rq1");
-        addExpense();
-        System.out.println("Rq2");
-        getExpense();
-        System.out.println("Rq3");
+        System.out.println("Регистрация пользователя");
         registerUser();
-        System.out.println("Rq4");
+        System.out.println("Получение данных пользователя");
         getUser();
+        System.out.println("Добавление трат пользователя");
+        addExpense();
+        System.out.println("Получение трат пользователя");
+        getExpense();
     }
 
     private static void addExpense() {

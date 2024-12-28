@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57831a02-7aa6-4ade-a9f2-fbf19ae256f0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isupov/homework/GrpcClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isupov/homework/GrpcServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isupov/homework/GrpcUserServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isupov/homework/impl/ExpenseServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/isupov/homework/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/proto/expense.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/proto/user.proto" afterDir="false" />
+    <list default="true" id="57831a02-7aa6-4ade-a9f2-fbf19ae256f0" name="Changes" comment="add">
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expense.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/client.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isupov/homework/GrpcClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isupov/homework/GrpcClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isupov/homework/GrpcServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isupov/homework/GrpcExpenseServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,25 +38,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GrpcClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GrpcServer.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.devOps [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.hw-grpc [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/evgenijisupov/Desktop/Projects/hw-grpc/src/main/resources&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GrpcClient.executor": "Run",
+    "Application.GrpcServer.executor": "Run",
+    "Maven.devOps [clean,package].executor": "Run",
+    "Maven.hw-grpc [clean,package].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/evgenijisupov/Desktop/Projects/hw-grpc"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/proto" />
     </key>
@@ -80,8 +77,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GrpcServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.isupov.homework.GrpcServer" />
+    <configuration name="GrpcExpenseServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.isupov.homework.GrpcExpenseServer" />
       <module name="hw-grpc" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -90,7 +87,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.GrpcClient" />
-        <item itemvalue="Application.GrpcServer" />
+        <item itemvalue="Application.GrpcExpenseServer" />
       </list>
     </recent_temporary>
   </component>
@@ -103,6 +100,19 @@
       <option name="presentableId" value="Default" />
       <updated>1735238904812</updated>
     </task>
+    <task id="LOCAL-00001" summary="add">
+      <option name="closed" value="true" />
+      <created>1735368399726</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1735368399726</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
 </project>

@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY target/expense-service-jar-with-dependencies.jar /app/expense-service.jar
 
-EXPOSE 8085
+EXPOSE 8090
 
 CMD ["java", "-jar", "/app/expense-service.jar"]
