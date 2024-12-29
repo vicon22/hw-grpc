@@ -1,25 +1,9 @@
-version: '3.8'
-
 services:
-  py:
+  py-cl:
     build:
       context: .
       dockerfile: py.Dockerfile
     image: py-service:latest
-    depends_on:
-      - expense
-      - user
-    networks:
-      - app-network
-
-  client:
-    build:
-      context: .
-      dockerfile: client.Dockerfile
-    image: client-service:latest
-    environment:
-      - USER_SERVICE_URL=http://user:8090
-      - EXPENSE_SERVICE_URL=http://expense:8085
     depends_on:
       - expense
       - user
